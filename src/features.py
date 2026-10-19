@@ -12,7 +12,7 @@ def add_log_features(df):
 
 def add_scaffold_onehot(df, scaffold_col='scaffold'):
     """Создаёт one-hot для скаффолдов."""
-    dummies = pd.get_dummies(df[scaffold_col], prefix='sc').astype(float)
+    dummies = pd.get_dummies(df[scaffold_col], prefix='sc', drop_first=True).astype(float)
     return pd.concat([df, dummies], axis=1)
 
 def center_features(df, cols):

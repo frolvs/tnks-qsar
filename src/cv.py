@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 import numpy as np
-from sklearn.model_selection import LeaveOneOut
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import LeaveOneOut, StratifiedKFold
 
 def loo_cv(X, y, model_factory=LinearRegression):
     """LeaveOneOut CV. Returns q^2, rmse and preds."""
